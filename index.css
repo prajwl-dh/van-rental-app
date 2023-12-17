@@ -53,6 +53,8 @@ header a:hover {
 
 main {
     margin-bottom: 85px;
+    display: flex;
+    flex-direction: column;
 }
 
 footer {
@@ -66,3 +68,52 @@ footer {
     margin-top: auto;
     font-weight: 500;
 }
+
+/*** Begin Home***/
+.home-container {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)), url("./src/assets/images/home-hero.png") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 350px;
+    color: white;
+    padding: 45px 23px;
+}
+
+.home-container h1 {
+    font-weight: 700;
+    font-size: 2.25rem;
+    line-height: 42px;
+}
+
+.home-container p {
+    line-height: 24px;
+}
+
+.home-container a {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    background-color: #FF8C38;
+    border: none;
+    width: 100%;
+    margin-top: 27px;
+    padding-block: .75rem;
+    color: white;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform .1s ease-in-out;
+}
+
+.home-container a:hover {
+    transform: translate(1px, 1px);
+}
+/*** End Home***/
+
+/*** Begin About***/
+/*** End About***/
+
+/*** Begin Vans***/
+/*** End Vans***/
