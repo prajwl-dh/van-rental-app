@@ -4,7 +4,8 @@ import "./server"
 import Layout from "../src/components/Layout.jsx"
 import Home from "./pages/Home.jsx"
 import About from "./pages/About.jsx"
-import Vans from "./pages/Vans.jsx"
+import Vans from "./pages/vans/Vans.jsx"
+import VansDetail from "./pages/vans/VansDetail.jsx"
 
 export default function App(){
     return(
@@ -16,6 +17,7 @@ export default function App(){
                         <Route path="/host" element={<></>} />
                         <Route path="/about" element={<About />} />
                         <Route path="/vans" element={<Vans />} />
+                        <Route path="/vans/:id" element={<VansDetail />} />
                     </Route>
                 </Routes>
             </BrowserRouter>
