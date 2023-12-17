@@ -6,6 +6,7 @@ import Home from "./pages/Home.jsx"
 import About from "./pages/About.jsx"
 import Vans from "./pages/vans/Vans.jsx"
 import VansDetail from "./pages/vans/VansDetail.jsx"
+import HostLayout from "../src/components/HostLayout.jsx"
 
 export default function App(){
     return(
