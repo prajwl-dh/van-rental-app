@@ -1,9 +1,12 @@
 import React from "react";
+import HostHeader from "./HostHeader.jsx"
+import { Outlet } from "react-router-dom";
 
 export default function HostLayout(){
     return(
         <div>
-            This is the Host Layout, will contain a navbar
+            <HostHeader />
+            <Outlet />
         </div>
     )
 }

@@ -292,3 +292,16 @@ i[class*='van-type-'] {
     font-size: 1.125rem;
 }
 /*** End VansDetail***/
+
+/*** Begin HostLayout***/
+.host-nav {
+    display: flex;
+}
+
+.host-nav a {
+    text-decoration: none;
+    color: #4D4D4D;
+    font-weight: 500;
+    padding: 5px 20px;
+}
+/*** End HostLayout***/
