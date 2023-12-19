@@ -5,5 +5,5 @@
 
 # Work In Progress
 - Not all features are completed
-- I am working on them as I am learning React and React-router
+- I am working on them during my free time
 
