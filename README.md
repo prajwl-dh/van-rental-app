@@ -4,5 +4,5 @@
 
 # Work In Progress
 
-The app is hosted on netlify . Link : (link-to-be-added)
+The app is hosted on netlify . Link : https://eloquent-cendol-956b52.netlify.app/
 
