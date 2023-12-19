@@ -1,5 +1,5 @@
 import React from "react";
-import {BrowserRouter, Routes, Route, Link} from "react-router-dom"
+import {BrowserRouter, Routes, Route} from "react-router-dom"
 import "./server"
 import Layout from "../src/components/Layout.jsx"
 import Home from "./pages/Home.jsx"
@@ -11,7 +11,10 @@ import HostDashboard from "./pages/host/HostDashboard.jsx"
 import HostIncome from "./pages/host/HostIncome.jsx"
 import HostReview from "./pages/host/HostReview.jsx"
 import HostVans from "./pages/host/HostVans.jsx"
-import HostVansDetails from "./pages/host/HostsVanDetails.jsx"
+import HostVansDetails from "./pages/host/HostVanDetails.jsx"
+import HostVansDetailsInfo from "./pages/host/HostVanDetailsInfo.jsx"
+import HostVansDetailsPhotos from "./pages/host/HostVanDetailsPhotos.jsx"
+import HostVansDetailsPricing from "./pages/host/HostVanDetailsPricing.jsx"
 
 export default function App(){
     return(
@@ -29,7 +32,12 @@ export default function App(){
                             <Route path="income" element={<HostIncome />} />
                             <Route path="review" element={<HostReview />} />
                             <Route path="vans" element={<HostVans />} />
-                            <Route path="vans/:id" element={<HostVansDetails />} />
+
+                            <Route path="vans/:id" element={<HostVansDetails />}>
+                                <Route index element={<HostVansDetailsInfo />} />
+                                <Route path="pricing" element={<HostVansDetailsPricing />} />
+                                <Route path="photos" element={<HostVansDetailsPhotos />} />
+                            </Route>
                         </Route>
                     </Route>
                 </Routes>

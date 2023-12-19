@@ -1,9 +1,10 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, Outlet, useParams } from "react-router-dom";
+import HostVanDetailsHeader from "../../components/HostVanDetailsHeader.jsx"
 
 export default function HostVansDetails(){
     const params = useParams()
-    const [van, setVan] = React.useState('')
+    const [van, setVan] = React.useState(null)
 
     React.useEffect(() => {
         async function fetchHostVanDetails(){
@@ -18,7 +19,8 @@ export default function HostVansDetails(){
 
 
     return(
-        <section className="host-van-detail-section">
+        van ?
+        <section>
             <div className="back-to-host-van">
                 <Link to=".." relative="path">&larr; <span>Back to all vans</span></Link>
             </div>
@@ -31,7 +33,11 @@ export default function HostVansDetails(){
                         <h4>${van.price}/day</h4>
                     </div>
                 </div>
+                <HostVanDetailsHeader />
+                <Outlet context={van} />
             </div>
         </section>
+        :
+        <h3>Loading ...</h3>
     )
 }
