@@ -451,3 +451,19 @@ i[class*='van-type-'] {
     border-radius: 5px;
 }
 /*** End HostVansDetailsPhotos***/
+
+/*** Responsive Design For different screen sizes***/
+@media (min-width: 800px) {
+    body {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .site-wrapper {
+        border: 2px solid rgb(53, 53, 53);
+        border-radius: 5px;
+        width: 800px;
+    }
+}
+
