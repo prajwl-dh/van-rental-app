@@ -11,6 +11,7 @@ import HostDashboard from "./pages/host/HostDashboard.jsx"
 import HostIncome from "./pages/host/HostIncome.jsx"
 import HostReview from "./pages/host/HostReview.jsx"
 import HostVans from "./pages/host/HostVans.jsx"
+import HostVansDetails from "./pages/host/HostsVanDetails.jsx"
 
 export default function App(){
     return(
@@ -28,6 +29,7 @@ export default function App(){
                             <Route path="income" element={<HostIncome />} />
                             <Route path="review" element={<HostReview />} />
                             <Route path="vans" element={<HostVans />} />
+                            <Route path="vans/:id" element={<HostVansDetails />} />
                         </Route>
                     </Route>
                 </Routes>
