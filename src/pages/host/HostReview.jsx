@@ -3,7 +3,9 @@ import React from "react";
 export default function HostReview(){
     return(
         <div>
-            <h1>Host Review Goes Here. Work In Progress!</h1>
+            <br />
+            <br />
+            <h3>   Work In Progress!</h3>
         </div>
     )
 }
