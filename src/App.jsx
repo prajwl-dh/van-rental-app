@@ -10,8 +10,8 @@ import HostLayout from "../src/components/HostLayout.jsx"
 import HostDashboard from "./pages/host/HostDashboard.jsx"
 import HostIncome from "./pages/host/HostIncome.jsx"
 import HostReview from "./pages/host/HostReview.jsx"
-import HostVans from "./pages/host/HostVans.jsx"
-import HostVansDetails from "./pages/host/HostVanDetails.jsx"
+import HostVans, { loader as hostVansLoader } from "./pages/host/HostVans.jsx"
+import HostVansDetails, { loader as hostVanDetailsLoader } from "./pages/host/HostVanDetails.jsx"
 import HostVansDetailsInfo from "./pages/host/HostVanDetailsInfo.jsx"
 import HostVansDetailsPhotos from "./pages/host/HostVanDetailsPhotos.jsx"
 import HostVansDetailsPricing from "./pages/host/HostVanDetailsPricing.jsx"
@@ -29,9 +29,9 @@ export default function App(){
                 <Route index element={<HostDashboard />}/>
                 <Route path="income" element={<HostIncome />} />
                 <Route path="review" element={<HostReview />} />
-                <Route path="vans" element={<HostVans />} />
+                <Route path="vans" element={<HostVans />} loader={hostVansLoader} />
 
-                <Route path="vans/:id" element={<HostVansDetails />}>
+                <Route path="vans/:id" element={<HostVansDetails />} loader={hostVanDetailsLoader}>
                     <Route index element={<HostVansDetailsInfo />} />
                     <Route path="pricing" element={<HostVansDetailsPricing />} />
                     <Route path="photos" element={<HostVansDetailsPhotos />} />

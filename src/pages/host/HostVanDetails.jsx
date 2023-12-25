@@ -1,25 +1,18 @@
 import React from "react";
-import { Link, Outlet, useParams } from "react-router-dom";
+import { Link, Outlet, useLoaderData, useParams } from "react-router-dom";
 import HostVanDetailsHeader from "../../components/HostVanDetailsHeader.jsx"
+
+export async function loader({ params }){
+    const response = await fetch(`/api/host/vans/${params.id}`)
+    const data = await response.json()
+    return data.vans
+}
 
 export default function HostVansDetails(){
     const params = useParams()
-    const [van, setVan] = React.useState(null)
-
-    React.useEffect(() => {
-        async function fetchHostVanDetails(){
-            const response = await fetch(`/api/host/vans/${params.id}`)
-            const data = await response.json()
-            setVan((prev) => {
-                return data.vans
-            })
-        }
-        fetchHostVanDetails()
-    },[])
-
+    const van = useLoaderData()
 
     return(
-        van ?
         <section>
             <div className="back-to-host-van">
                 <Link to=".." relative="path">&larr; <span>Back to all vans</span></Link>
@@ -37,7 +30,5 @@ export default function HostVansDetails(){
                 <Outlet context={van} />
             </div>
         </section>
-        :
-        <h3>Loading ...</h3>
     )
 }

@@ -3,7 +3,6 @@ import { useOutletContext } from "react-router-dom";
 
 export default function HostVanDetailsInfo(){
     const van = useOutletContext()
-    console.log(van)
     return(
         <section className="host-van-detail-info">
             <h4>Name: <span>{van.name}</span></h4>
