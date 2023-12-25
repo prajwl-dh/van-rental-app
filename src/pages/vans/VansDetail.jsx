@@ -1,25 +1,18 @@
 import React from "react"
-import { Link, useParams, useLocation } from "react-router-dom"
+import { Link, useParams, useLocation, useLoaderData } from "react-router-dom"
+
+export async function loader({ params }){
+    const response = await fetch(`/api/vans/${params.id}`)
+    const data = await response.json()
+    return data.vans
+}
 
 export default function VansDetail(){
-    const param = useParams()
-    const [van, setVan] = React.useState(null)
-
+    const van = useLoaderData()
     const location = useLocation().state
 
-    React.useEffect(() => {
-        async function getVanDetail(){
-            const response = await fetch(`/api/vans/${param.id}`)
-            const data = await response.json()
-            setVan((prev) => {
-                return data.vans
-            })
-        }
-        getVanDetail()
-    },[])
 
     return(
-        van ?
         <div className="van-detail-container">
             <div className="back-button">
                 <Link to={`../vans${location.type ? `?type=${location.type}` : ""}`}>&larr; <span>Back to {location.type ? location.type : "all"} vans</span></Link>
@@ -33,7 +26,5 @@ export default function VansDetail(){
                 <button className="link-button">Rent this van</button>
             </div>
         </div>
-        :
-        <h1>Loading...</h1>
     )
 }

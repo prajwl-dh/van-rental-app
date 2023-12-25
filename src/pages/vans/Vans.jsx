@@ -1,23 +1,16 @@
 import React from "react"
-import { Link, useSearchParams } from "react-router-dom"
+import { Link, useSearchParams, useLoaderData } from "react-router-dom"
+
+export async function loader(){
+    const response = await fetch('/api/vans')
+    const data = await response.json()
+    return data.vans
+}
 
 export default function Vans(){
-    const [vans, setVans] = React.useState([])
     const [searchParams, setSearchParams] = useSearchParams()
-
     const filterType = searchParams.get("type")
-
-    React.useEffect(() => {
-        async function getVans(){
-            const response = await fetch('/api/vans')
-            const data = await response.json()
-            setVans((prev) => {
-                return data.vans
-            })
-        }
-        getVans()
-    }, [])
-
+    const vans = useLoaderData()
     const filteredVans = filterType == null ? vans : vans.filter((van) => van.type == filterType)
 
     const vansArray = filteredVans.map((van) => (
@@ -54,7 +47,7 @@ export default function Vans(){
                 <button onClick={() => filterButtonsClick("type", "clear")} className={`van-type clear-filters`}>Clear Filters</button>
             </div>
             <div className="van-list">
-                {vansArray.length > 0? vansArray : <h1>Loading...</h1>}
+                {vansArray}
             </div>
         </div>
     )
