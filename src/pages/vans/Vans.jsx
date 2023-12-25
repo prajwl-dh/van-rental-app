@@ -3,6 +3,9 @@ import { Link, useSearchParams, useLoaderData } from "react-router-dom"
 
 export async function loader(){
     const response = await fetch('/api/vans')
+    if(!response){
+        throw Error("Failed to fetch /api/vans")
+    }
     const data = await response.json()
     return data.vans
 }

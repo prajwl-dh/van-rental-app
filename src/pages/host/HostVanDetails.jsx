@@ -4,6 +4,9 @@ import HostVanDetailsHeader from "../../components/HostVanDetailsHeader.jsx"
 
 export async function loader({ params }){
     const response = await fetch(`/api/host/vans/${params.id}`)
+    if(!response){
+        throw Error("Failed to fetch /api/host/vans details")
+    }
     const data = await response.json()
     return data.vans
 }
