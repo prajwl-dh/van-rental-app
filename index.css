@@ -174,12 +174,39 @@ footer {
     padding-inline: 23px
 }
 
+.van-list-filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.van-list-filter-buttons > a {
+    margin-right: 15px;
+}
+
 .van-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
     gap: 34px;
     margin-top: 57px;
+}
+
+.van-type.clear-filters {
+    font-size: 15px;
+    margin-left: -20px;
+    height: 34px;
+    padding: 6px 26px;
+    font-style: normal;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    text-decoration: underline;
+    background-color: transparent;
+    color: #4D4D4D;
+}
+
+.van-type.clear-filters:hover {
+    color: #161616;
 }
 
 .van-tile a {
@@ -452,6 +479,18 @@ i[class*='van-type-'] {
 }
 /*** End HostVansDetailsPhotos***/
 
+/*** Begin 404NotFound Page***/
+.not-found-container {
+    padding-inline: 26px;
+}
+
+.not-found-container .link-button {
+    width: 100%;
+    background-color: #161616;
+    color: white;
+}
+/*** End 404NotFound Page***/
+
 /*** Responsive Design For different screen sizes***/
 @media (min-width: 800px) {
     body {
@@ -466,4 +505,3 @@ i[class*='van-type-'] {
         width: 800px;
     }
 }
-
