@@ -1,9 +1,11 @@
 import React from "react"
-import { Link, useParams } from "react-router-dom"
+import { Link, useParams, useLocation } from "react-router-dom"
 
 export default function VansDetail(){
     const param = useParams()
     const [van, setVan] = React.useState(null)
+
+    const location = useLocation().state
 
     React.useEffect(() => {
         async function getVanDetail(){
@@ -20,7 +22,7 @@ export default function VansDetail(){
         van ?
         <div className="van-detail-container">
             <div className="back-button">
-                <Link to="../vans">&larr; <span>Back to All Vans</span></Link>
+                <Link to={`../vans${location.type ? `?type=${location.type}` : ""}`}>&larr; <span>Back to {location.type ? location.type : "all"} vans</span></Link>
             </div>
             <div className="van-detail">
                 <img src={van.imageUrl}></img>

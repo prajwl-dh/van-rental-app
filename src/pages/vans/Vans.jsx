@@ -22,7 +22,7 @@ export default function Vans(){
 
     const vansArray = filteredVans.map((van) => (
         <div key={van.id} className="van-tile">
-            <Link to={`${van.id}`}>
+            <Link to={`${van.id}`} state={{type: filterType}}>
                 <img src={van.imageUrl}></img>
                 <div className="van-info">
                     <h3>{van.name}</h3>
