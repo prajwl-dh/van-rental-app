@@ -1,13 +1,21 @@
 import React from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, redirect } from "react-router-dom";
+import { checkAuth } from "../../api/auth"
 
 export async function loader(){
-    const response = await fetch('/api/host/vans')
-    if(!response){
-        throw Error("Failed to fetch /api/host/vans")
+    const isLoggedIn = checkAuth()
+    if(isLoggedIn == false){
+        const response = redirect("/login")
+        response.body = true
+        return response
+    }else{
+        const response = await fetch('/api/host/vans')
+        if(!response){
+            throw Error("Failed to fetch /api/host/vans")
+        }
+        const data = await response.json()
+        return data.vans
     }
-    const data = await response.json()
-    return data.vans
 }
 
 export default function HostVans(){

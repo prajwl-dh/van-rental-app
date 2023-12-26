@@ -1,5 +1,17 @@
 import React from "react";
-import { useOutletContext } from "react-router-dom";
+import { useOutletContext, redirect } from "react-router-dom";
+import { checkAuth } from "../../api/auth"
+
+export async function loader(){
+    const isLoggedIn = checkAuth()
+    if(isLoggedIn == false){
+        const response = redirect("/login")
+        response.body = true
+        return response
+    }else{
+        return null
+    }
+}
 
 export default function HostVanDetailsInfo(){
     const van = useOutletContext()
