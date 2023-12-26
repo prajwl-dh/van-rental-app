@@ -17,12 +17,14 @@ import HostVansDetailsPhotos from "./pages/host/HostVanDetailsPhotos.jsx"
 import HostVansDetailsPricing from "./pages/host/HostVanDetailsPricing.jsx"
 import PageNotFound from "./pages/PageNotFound.jsx"
 import ErrorComponent from "./components/ErrorComponent.jsx"
+import Login from "./pages/Login.jsx"
 
 export default function App(){
     const router = createBrowserRouter(createRoutesFromElements(
         <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/vans" element={<Vans />} loader={vansLoader} errorElement={<ErrorComponent />} />
             <Route path="/vans/:id" element={<VansDetail />} loader={vansDetailLoader} errorElement={<ErrorComponent />}/>
 
