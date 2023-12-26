@@ -1,11 +1,22 @@
 import React from "react"
+import { authienticate } from "../api/auth" 
+import { redirect } from "react-router-dom"
 
 export default function Login() {
     const [loginFormData, setLoginFormData] = React.useState({ email: "", password: "" })
 
     function handleSubmit(e) {
         e.preventDefault()
-        console.log(loginFormData)
+        const authData = authienticate(loginFormData.email, loginFormData.password)
+        if(authData == true){
+            const response = redirect("/host")
+            response.body = true
+            return response
+        }else{
+            const response = redirect("/login")
+            response.body = true
+            return response
+        }
     }
 
     function handleChange(e) {
