@@ -18,7 +18,7 @@ export default function Login() {
         })
         if(authData == true){
             setFormState((prev) => ('idle'))
-            navigate('/host/vans', {replace: true})
+            navigate('/host', {replace: true})
         }else{
             setFormState((prev) => ('idle'))
             navigate('/login?message=incorrectCredentials', {replace: true})
