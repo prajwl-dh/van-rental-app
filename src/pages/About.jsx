@@ -1,5 +1,4 @@
-import React from "react"
-import { Outlet, Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 import aboutHero from "../assets/images/about-hero.png"
 
 export default function About(){

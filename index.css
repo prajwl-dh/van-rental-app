@@ -578,3 +578,26 @@ i[class*='van-type-'] {
         width: 800px;
     }
 }
+
+/*** Responsive header for mobile devices***/
+@media (max-width: 500px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    header .site-logo {
+        align-self: center;
+        margin-right: 0;
+    }
+
+    nav {
+        margin-top: 20px;
+    }
+
+    nav a {
+        display: block;
+        padding: 0px 6vw;
+    }
+}

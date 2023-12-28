@@ -1,4 +1,3 @@
-import React from "react";
 import HostHeader from "./HostHeader.jsx"
 import { Outlet, redirect } from "react-router-dom";
 import { checkAuth } from "../api/auth.js"

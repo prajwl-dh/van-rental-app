@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import { Suspense } from "react";
 import { Link, useLoaderData, redirect, defer, Await } from "react-router-dom";
 import { checkAuth } from "../../api/auth"
 

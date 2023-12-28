@@ -1,4 +1,3 @@
-import React from "react";
 import { Link, NavLink } from "react-router-dom"
 import avatarIcon from "../assets/images/avatar-icon.png"
 

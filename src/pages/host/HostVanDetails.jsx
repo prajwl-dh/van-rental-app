@@ -1,5 +1,4 @@
-import React, { Suspense } from "react";
-import { Link, Outlet, useLoaderData, useParams, redirect, defer, Await } from "react-router-dom";
+import { Link, Outlet, useLoaderData, redirect, defer, Await } from "react-router-dom";
 import HostVanDetailsHeader from "../../components/HostVanDetailsHeader.jsx"
 import { checkAuth } from "../../api/auth.js"
 
@@ -23,7 +22,6 @@ export async function loader({ params }){
 }
 
 export default function HostVansDetails(){
-    const params = useParams()
     const vanPromise = useLoaderData()
 
     function renderHostVanDetail(van){

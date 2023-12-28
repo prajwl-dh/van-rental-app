@@ -1,4 +1,4 @@
-import React, { Suspense } from "react"
+import { Suspense } from "react"
 import { Link, useSearchParams, useLoaderData, defer, Await } from "react-router-dom"
 
 export async function loader(){

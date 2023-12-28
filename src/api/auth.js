@@ -1,5 +1,3 @@
-import { redirect } from "react-router-dom"
-
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
