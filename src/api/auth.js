@@ -1,5 +1,9 @@
 import { redirect } from "react-router-dom"
 
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 export function checkAuth(){
     const isAuthienticated = localStorage.getItem("isAuthienticated")
     if(isAuthienticated == "true"){
@@ -11,7 +15,8 @@ export function checkAuth(){
     }
 }
 
-export function authienticate(email, password){
+export async function authienticate(email, password){
+    await sleep(1000)
     if(email === "demo@demo.com" && password === "p123"){
         localStorage.setItem("isAuthienticated", "true")
         return true
