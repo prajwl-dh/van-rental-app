@@ -16,7 +16,7 @@ export function checkAuth(){
 }
 
 export async function authienticate(email, password){
-    await sleep(1000)
+    await sleep(500)
     if(email === "demo@demo.com" && password === "p123"){
         localStorage.setItem("isAuthienticated", "true")
         return true
