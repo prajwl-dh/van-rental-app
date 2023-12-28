@@ -49,8 +49,8 @@ export default function Login() {
     }else{
         return (
             <div className="login-container">
-                <h1>Sign in to your account</h1>
-                {location === "?message=incorrectCredentials" ? <h3 className="red">Incorrect email or password, please try again</h3> : null}
+                <h1>Sign in to your host account</h1>
+                {location === "?message=incorrectCredentials" ? <h3 className="red">Incorrect email or password, please try again<br/>email: demo@demo.com <br />password: p123</h3> : null}
                 <form onSubmit={handleSubmit} className="login-form">
                     <input
                         name="email"
@@ -58,6 +58,7 @@ export default function Login() {
                         type="email"
                         placeholder="demo@demo.com"
                         value={loginFormData.email}
+                        required
                     />
                     <input
                         name="password"
@@ -65,6 +66,7 @@ export default function Login() {
                         type="password"
                         placeholder="p123"
                         value={loginFormData.password}
+                        required
                     />
                     <button disabled={formState === 'submitting'}>{formState === 'submitting'? "Logging in..." : "Log in"}</button>
                 </form>
