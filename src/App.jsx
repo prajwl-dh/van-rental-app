@@ -17,6 +17,7 @@ import HostVansDetailsPricing, { loader as hostVansDetailsPricingLoader} from ".
 import PageNotFound from "./pages/PageNotFound.jsx"
 import ErrorComponent from "./components/ErrorComponent.jsx"
 import Login from "./pages/Login.jsx"
+import RentVan, { loader as rentVanLoader } from './pages/RentVan.jsx'
 
 export default function App(){
     const router = createBrowserRouter(createRoutesFromElements(
@@ -26,6 +27,7 @@ export default function App(){
             <Route path="/login" element={<Login />} />
             <Route path="/vans" element={<Vans />} loader={vansLoader} errorElement={<ErrorComponent />} />
             <Route path="/vans/:id" element={<VansDetail />} loader={vansDetailLoader} errorElement={<ErrorComponent />}/>
+            <Route path="/vans/:id/rent" element={<RentVan />} errorElement={<ErrorComponent />} loader={rentVanLoader} />
 
             <Route path="/host" element={<HostLayout />} loader={hostLayoutLoader}>
                 <Route index element={<HostDashboard />} loader={hostDashboardLoader}/>

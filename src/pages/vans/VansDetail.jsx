@@ -1,5 +1,5 @@
 import { Suspense } from "react"
-import { Link, useLocation, useLoaderData, Await, defer } from "react-router-dom"
+import { Link, useLocation, useLoaderData, Await, defer, useNavigate } from "react-router-dom"
 
 export async function loader({ params }){
     async function loadVansDetail(){
@@ -16,6 +16,7 @@ export async function loader({ params }){
 export default function VansDetail(){
     const vanPromise = useLoaderData()
     const location = useLocation().state
+    const navigate = useNavigate()
 
     function renderVanDetails(van){
         return(
@@ -25,7 +26,7 @@ export default function VansDetail(){
                 <h2>{van.name}</h2>
                 <p className="van-price"><span>${van.price}</span>/day</p>
                 <p>{van.description}</p>
-                <button className="link-button">Rent this van</button>
+                <button className="link-button" onClick={() => navigate(`rent?id=${van.id}`)}>Rent this van</button>
             </div>
         )
     }
