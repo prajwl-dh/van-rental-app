@@ -36,7 +36,7 @@ export default function RentVan(){
                     <div className="details">
                         <span><b>Name: </b> {van.name}</span>
                         <span><b>Type: </b> {van.type}</span>
-                        <span><b>Amount Paid: $</b>{van.price}</span>
+                        <span><b>Amount Paid: $</b>{van.price}/day</span>
                         <span><b>Date Paid: </b>{today}</span>
                         <span><b>Pickup Location: </b> Dallas, TX</span>
                         <span><b>Return Location: </b> Dallas, TX</span>
