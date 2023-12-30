@@ -7,6 +7,7 @@ html, body {
     padding: 0;
     background-color: #FFF7ED;
     font-family: "Inter", sans-serif;
+    scroll-behavior: smooth;
 }
 
 body::-webkit-scrollbar {
@@ -847,12 +848,18 @@ img.graph {
         display: flex;
         flex-direction: row;
         justify-content: center;
+        padding: 15px 0px;
     }
     
     .site-wrapper {
-        border: 2px solid rgb(53, 53, 53);
-        border-radius: 5px;
+        border: 1px solid rgb(148, 148, 148);
+        border-radius: 15px;
         width: 800px;
+        box-shadow: #343434 0px 0px 50px 10px; 
+    }
+
+    footer {
+        border-radius: 0px 0px 15px 15px;
     }
 }
 

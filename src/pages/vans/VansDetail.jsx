@@ -1,5 +1,6 @@
 import { Suspense } from "react"
 import { Link, useLocation, useLoaderData, Await, defer, useNavigate } from "react-router-dom"
+import LoadingAnimation from '../../components/LoadingAnimation'
 
 export async function loader({ params }){
     async function loadVansDetail(){
@@ -36,7 +37,7 @@ export default function VansDetail(){
             <div className="back-button">
                 <Link to={`../vans${location.type ? `?type=${location.type}` : ""}`}>&larr; <span>Back to {location.type ? location.type : "all"} vans</span></Link>
             </div>
-            <Suspense fallback={<h2>Loading Van...</h2>}>
+            <Suspense fallback={<LoadingAnimation />}>
                 <Await resolve={vanPromise.van}>
                     {renderVanDetails}
                 </Await>

@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { Link, Outlet, useLoaderData, redirect, defer, Await } from "react-router-dom";
 import HostVanDetailsHeader from "../../components/HostVanDetailsHeader.jsx"
 import { checkAuth } from "../../api/auth.js"
+import LoadingAnimation from '../../components/LoadingAnimation'
 
 export async function loader({ params }){
     const isLoggedIn = checkAuth()
@@ -47,7 +48,7 @@ export default function HostVansDetails(){
             <div className="back-to-host-van">
                 <Link to=".." relative="path">&larr; <span>Back to all vans</span></Link>
             </div>
-            <Suspense fallback={<h2>Loading Van...</h2>}>
+            <Suspense fallback={<LoadingAnimation />}>
                 <Await resolve={vanPromise.van}>
                     {renderHostVanDetail}
                 </Await>

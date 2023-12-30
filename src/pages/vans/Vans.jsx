@@ -1,5 +1,6 @@
 import { Suspense } from "react"
 import { Link, useSearchParams, useLoaderData, defer, Await } from "react-router-dom"
+import LoadingAnimation from '../../components/LoadingAnimation'
 
 export async function loader(){
     async function getVans(){
@@ -61,7 +62,7 @@ export default function Vans(){
     return(
         <div className="van-list-container">
             <h1>Explore our van options</h1>
-            <Suspense fallback={<h2>Loading Vans ...</h2>}>
+            <Suspense fallback={<LoadingAnimation />}>
                 <Await resolve={vansPromise.vans}>
                     {renderVanElements}
                 </Await>

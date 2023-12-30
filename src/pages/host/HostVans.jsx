@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import { Link, useLoaderData, redirect, defer, Await } from "react-router-dom";
 import { checkAuth } from "../../api/auth"
+import LoadingAnimation from '../../components/LoadingAnimation'
 
 export async function loader(){
     const isLoggedIn = checkAuth()
@@ -51,7 +52,7 @@ export default function HostVans(){
         <div>
             <section>
                 <h1 className="host-vans-title">Your Listed Vans</h1>
-                <Suspense fallback={<h2>Loading Vans...</h2>}>
+                <Suspense fallback={<LoadingAnimation />}>
                     <Await resolve={vansPromise.vans}>
                         {renderHostVans}
                     </Await>
