@@ -46,7 +46,7 @@ export default function RentVan(){
                 </div>
                 <p>Thank you for choosing our van rental service. Safe travels!</p>
                 <div className="back-button">
-                    <Link to={'/'}>&larr; Back to home page</Link>
+                    <Link to={'/vans'}>&larr; Back to vans page</Link>
                 </div>
             </div>
         )
