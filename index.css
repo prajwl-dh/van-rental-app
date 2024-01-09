@@ -7,7 +7,6 @@ html, body {
     padding: 0;
     background-color: #FFF7ED;
     font-family: "Inter", sans-serif;
-    scroll-behavior: smooth;
 }
 
 body::-webkit-scrollbar {
