@@ -851,14 +851,7 @@ img.graph {
     }
     
     .site-wrapper {
-        border: 1px solid rgb(148, 148, 148);
-        border-radius: 15px;
-        width: 800px;
-        box-shadow: #343434 0px 0px 50px 10px; 
-    }
-
-    footer {
-        border-radius: 0px 0px 15px 15px;
+        width: 60vw;
     }
 }
 
